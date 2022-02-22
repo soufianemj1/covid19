@@ -23,7 +23,7 @@ mongoose.connect(
         if (err) {
             console.log(err);
         }
-        console.log('connected !!');
+        console.log('data base well connected');
     }
 
 );
