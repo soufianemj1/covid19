@@ -36,7 +36,7 @@ const Test = () => {
      
       </div>
       {
-        disease === 'yes' && <div> <h2>For ypur safety, you cant have the vaaccine now ! <a href="https://www.cdc.gov/coronavirus/2019-ncov/php/index.html"></a>more info</h2> </div>
+        disease === 'yes' && <div> <h2>For your safety, you cant have the vaaccine now ! <a href="https://www.cdc.gov/coronavirus/2019-ncov/php/index.html">more info</a></h2> </div>
       }
 
     </div>
