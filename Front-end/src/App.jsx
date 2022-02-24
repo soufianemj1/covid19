@@ -1,5 +1,6 @@
 import Home from './components/home'
-import { render } from "react-dom";
+import Form from './components/form'
+import { render } from "react-dom"
 import {
   BrowserRouter,
   Routes,
@@ -16,6 +17,8 @@ function App() {
           <Route index element={<Home />} />
         </Route>
         <Route path="/test" element={<Test />}></Route>
+        <Route path="/form" element={<Form />}></Route>
+
         
       </Routes>
     </BrowserRouter>,
@@ -25,7 +28,6 @@ function App() {
   return (
     <div className="App">
       < Home />
-      < Test />
     </div>
   )
 }

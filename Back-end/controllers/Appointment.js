@@ -8,10 +8,9 @@ exports.create = (req,res) =>{
 
         CIN: req.body.cin,
         Age: req.body.age,
-        Adresse: req.body.adresse,
         Ville: req.body.ville,
         Dose: req.body.dose,
-        Tel: req.body.tel,
+        Tel: req.body.telephone,
         Date: date
 
     });
