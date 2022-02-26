@@ -34,6 +34,17 @@ const Rdv = require('./routes/Appointment');
 
 app.use('/api/appointment',Rdv);
 
+// ------------------ Manager ------------------
 
+const Manager = require('./routes/Manager');
+
+app.use('/api/manager', Manager)
+
+
+// ------------------ admin ------------------
+
+const admin = require('./routes/admin');
+
+app.use('/api/admin', admin)
 
 app.listen(4001);

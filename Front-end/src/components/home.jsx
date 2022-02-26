@@ -12,7 +12,7 @@ const Home = () => {
             <p className='my-2'>I think the darkest days of the pandemic are yet to come, and I share that because of the new variants, these new mutated viruses that are surely causing a challenge.
               preserve your health and get your vaccine.
             </p>
-            <Button button={test} />
+            <Button button={test} to='/test'/>
         </div>
         <div className='flex-1'	>
             <img src={vaccination} alt="" />
