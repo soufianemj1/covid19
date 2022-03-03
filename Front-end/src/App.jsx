@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import './App.css'
 import Test from './components/test'
+import ManagerAuth from './backoffice/ManagerAuth';
 
 function App() {
   render(
@@ -18,7 +19,7 @@ function App() {
         </Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/form" element={<Form />}></Route>
-
+        <Route path="/login" element={<ManagerAuth />}></Route>
         
       </Routes>
     </BrowserRouter>,
