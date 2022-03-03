@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import './App.css'
 import Test from './components/test'
+import Dahsboard from './backoffice/dahsboard';
 
 function App() {
   render(
@@ -18,6 +19,7 @@ function App() {
         </Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/form" element={<Form />}></Route>
+        <Route path="dashboard" element={<Dahsboard />}></Route>
 
         
       </Routes>
