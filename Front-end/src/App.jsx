@@ -9,6 +9,7 @@ import {
 import './App.css'
 import Test from './components/test'
 import ManagerAuth from './backoffice/ManagerAuth';
+import Dahsboard from './backoffice/dahsboard';
 
 function App() {
   render(
@@ -20,6 +21,8 @@ function App() {
         <Route path="/test" element={<Test />}></Route>
         <Route path="/form" element={<Form />}></Route>
         <Route path="/login" element={<ManagerAuth />}></Route>
+        <Route path="dashboard" element={<Dahsboard />}></Route>
+
         
       </Routes>
     </BrowserRouter>,
