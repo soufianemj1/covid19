@@ -25,7 +25,7 @@ function ManagerAuth() {
             if (role === 'manager' ) {
                 localStorage.setItem("token", token);
                 localStorage.setItem("role", role);
-                navigate("/dahsboard", { replace: true });
+                navigate("/dashboard", { replace: true });
             }
 
         })

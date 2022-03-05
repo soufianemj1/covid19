@@ -16,7 +16,7 @@ exports.login = async(req,res) => {
     if (!found_Manager) {
         res.status(404).send({ message:'user not found !' })
     }else{
-
+        let region = found_Manager.Region;
         const token = jwt.sign(
             { id: found_Manager._id, email:found_Manager.email, password:found_Manager.password },
             `${process.env.JWT_SECRET_KEY}`,
@@ -25,7 +25,7 @@ exports.login = async(req,res) => {
             }
         );
         
-        res.status(200).json({token, role:'manager', message: "You logged in successfully"});
+        res.status(200).json({token, role:'manager', message: "You logged in successfully", region:region});
 
     }
 }
