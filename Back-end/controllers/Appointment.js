@@ -23,3 +23,15 @@ exports.create = (req,res) =>{
      .catch(err => console.warn(err))
 
 }
+
+exports.findAll = (req,res) => {
+
+    RDV.find()
+    .then(data => { 
+      res.status(200).json(data)
+    }) 
+    .catch(err => { 
+      console.log(err);
+    })
+  
+};
