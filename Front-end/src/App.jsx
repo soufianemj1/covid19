@@ -21,7 +21,7 @@ function App() {
         <Route path="/test" element={<Test />}></Route>
         <Route path="/form" element={<Form />}></Route>
         <Route path="/login" element={<ManagerAuth />}></Route>
-        <Route path="dashboard" element={<Dahsboard />}></Route>
+        <Route path="/dashboard" element={<Dahsboard />}></Route>
 
         
       </Routes>

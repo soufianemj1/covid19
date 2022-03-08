@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import login from '../images/login.png'
+import Login from '../images/login.png'
 
 
 function ManagerAuth() {
@@ -21,10 +21,13 @@ function ManagerAuth() {
 
             let token = res.data.token;
             let role = res.data.role;
+            let region = res.data.region;
             
             if (role === 'manager' ) {
-                localStorage.setItem("token", token);
-                localStorage.setItem("role", role);
+                document.cookie = ("token=" + token + ";");
+                document.cookie = ("role=" + role + ";");
+                document.cookie = ("region=" + region + ";");
+               
                 navigate("/dashboard", { replace: true });
             }
 
@@ -46,7 +49,7 @@ function ManagerAuth() {
                         Login
                     </label>
                     <div className='flex justify-center mt-5'>
-                        <img src={login} />
+                        <img src={Login} />
                     </div>
                     <div class="mt-10">
                                     

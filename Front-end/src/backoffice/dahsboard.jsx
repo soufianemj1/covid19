@@ -3,13 +3,13 @@ import Table from './table'
 
 const Dahsboard = () => {
   return (
-      <div className='flex  	'>
+      <div className='flex w-screen jusify-center'>
     <div>
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
-    <div class="fixed flex flex-col top-0 left-0 w-64 bg-gray-900 h-full shadow-lg">
+    <div class=" flex flex-col h-screen  w-64 bg-gray-900 shadow-lg">
         <div class="flex items-center pl-6 h-20 border-b border-gray-800">
             <div class="ml-1">
-                <p class="ml-1 text-md font-medium tracking-wide truncate text-gray-100 font-sans">HELLO</p>
+                <p class="ml-1 text-md font-medium tracking-wide truncate text-gray-100 font-sans">Hello,</p>
                 <div class="badge">
                        <span class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-800 bg-blue-100 rounded-full">Admin</span>
                 </div>
@@ -38,6 +38,9 @@ const Dahsboard = () => {
     </div>
     </div>
     
+    <div className='w-full p-20 bg-gray-50	'>
+        < Table />
+    </div>
     </div>
   )
 }
