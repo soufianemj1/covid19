@@ -19,7 +19,7 @@ const Form = () => {
     const Appointment = {
         cin: CIN,
         age: parseInt(Age),
-        ville: Ville,
+        ville: Ville.toUpperCase(),
         dose: parseInt(Dose),
         email: Email
     }
