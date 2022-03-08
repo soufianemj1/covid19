@@ -65,7 +65,7 @@ function Table() {
                       scope="col"
                       className="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
                     >
-                      Tel
+                      Email 
                     </th>
                     <th
                       scope="col"
@@ -93,13 +93,13 @@ function Table() {
                           {el.Age}
                         </td>
                         <td className="py-4 px-6 text-sm text-black-500 whitespace-nowrap dark:text-black-400">
-                          {el.Ville}
+                          {el.Ville.toUpperCase()}
                         </td>
                         <td className="py-4 px-6 text-sm text-black-500 whitespace-nowrap dark:text-black-400">
                           {el.Dose}
                         </td>
                         <td className="py-4 px-6 text-sm text-black-500 whitespace-nowrap dark:text-black-400">
-                          {el.Tel}
+                          {el.Email}
                         </td>
                         <td className="py-4 px-6 text-sm text-black-500 whitespace-nowrap dark:text-black-400">
                           {dayjs(el.Date).format('DD/MM/YYYY')}

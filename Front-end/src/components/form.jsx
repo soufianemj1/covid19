@@ -14,18 +14,18 @@ const Form = () => {
     const [Age, setAge] = useState('')
     const [Ville, setVille] = useState('')
     const [Dose, setDose] = useState('')
-    const [Telephone, setTelephone] = useState('')
+    const [Email, setEmail] = useState('')
     const [finish, setFinish] = useState(false)
     const Appointment = {
         cin: CIN,
         age: parseInt(Age),
         ville: Ville,
         dose: parseInt(Dose),
-        telephone: Telephone
+        email: Email
     }
     const sendData = () => {
 
-        axios.post('http://localhost:4001/api/appointment/make_appointment', Appointment )
+        axios.post('http://localhost:4001/api/appointment/makeAppointment', Appointment )
         .then(res => {
             setFinish(true)
         })
@@ -66,8 +66,8 @@ const Form = () => {
                         </div>
 
                         <div>
-                            <label className="text-gray-800 font-semibold block my-3 text-md" for="telephone">Telephone:</label>
-                            <input className="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" onChange={(e)=>setTelephone(e.target.value)} type="text" name="telephone" id="telephone" placeholder="telephone" />
+                            <label className="text-gray-800 font-semibold block my-3 text-md" for="telephone">Email:</label>
+                            <input className="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" onChange={(e)=>setEmail(e.target.value)} type="text" name="Email" id="Email" placeholder="Email" />
                         </div>
                         
                         <button onClick={sendData} className="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Register</button>
