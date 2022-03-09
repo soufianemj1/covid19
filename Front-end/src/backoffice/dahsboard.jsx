@@ -2,32 +2,67 @@ import Table from './table'
 import { Doughnut } from 'react-chartjs-2';
 import {Chart, ArcElement} from 'chart.js'
 Chart.register(ArcElement);
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
-const data = {
 
 
-   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-   datasets: [
-     {
-       label: '# of Votes',
-       data: [12, 19, 30,],
-       backgroundColor: [
-         'rgba(255, 99, 132, 0.2)',
-         'rgba(54, 162, 235, 0.2)',
-         'rgba(255, 206, 86, 0.2)',
-       ],
-       borderColor: [
-         'rgba(255, 99, 132, 1)',
-         'rgba(54, 162, 235, 1)',
-         'rgba(255, 206, 86, 1)',
 
-       ],
-       borderWidth: 1,
-     },
-   ],
- };
+
 const Dahsboard = () => {
+
+   let [data1,setData] = useState([]);
+
+    const getData = () => {
+
+        axios
+        .get("http://localhost:4001/api/appointment/getAppointement")
+        .then(res =>{ 
+
+           setData(res.data)
+
+        })
+        .catch((err) => console.log(err));
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    let Dose1 = 0;
+    let Dose2 = 0;
+    let Dose3  = 0;
+
+    data1.forEach(el=>{
+        if (el.Dose == 1) {
+            Dose1++;
+        }else if(el.Dose == 2){
+            Dose2++;
+        }else if(el.Dose == 3){
+            Dose3++;
+        }
+    })
+
+    const data = {
+        labels: ['Dose1', 'Dose2', 'Dose3'],
+        datasets: [{
+            data: [Dose1, Dose2, Dose3],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+     
+            ],
+            borderWidth: 1,
+        }],
+    };
     
+
   return (
       <div className='flex  w-screen jusify-center'>
     <div>
@@ -63,12 +98,12 @@ const Dahsboard = () => {
     </div>
     </div>
     
-    <div className=' flex  w-full p-20 bg-gray-50'>
+    <div className=' w-full p-20 bg-gray-50'>
 
-        < Table />
-        <div className='w-[15em]'>
+        <div className='w-[25em]'>
             <Doughnut  data={data} />
         </div>
+        < Table />
 
     </div>
     </div>
