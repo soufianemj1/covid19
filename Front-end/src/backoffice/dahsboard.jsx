@@ -7,8 +7,6 @@ import { useEffect, useState } from 'react';
 
 
 
-
-
 const Dahsboard = () => {
 
    let [data1,setData] = useState([]);
@@ -44,7 +42,7 @@ const Dahsboard = () => {
     })
 
     const data = {
-        labels: ['Dose1', 'Dose2', 'Dose3'],
+        labels: ['Dose1','Dose2','Dose3'],
         datasets: [{
             data: [Dose1, Dose2, Dose3],
             backgroundColor: [
@@ -61,7 +59,7 @@ const Dahsboard = () => {
             borderWidth: 1,
         }],
     };
-    
+   
 
   return (
       <div className='flex  w-screen jusify-center'>
@@ -101,7 +99,23 @@ const Dahsboard = () => {
     <div className=' w-full p-20 bg-gray-50'>
 
         <div className='w-[25em]'>
-            <Doughnut  data={data} />
+            <div className="flex">
+                <div className="flex my-2">
+                    <div class="w-5 h-5 bg-blue-200 rounded-full mr-2 mt-1"></div>
+                    <p className='mb-1'>Dose 1</p>
+                </div>
+                <div className="flex my-2">
+                    <div class="w-5 h-5 bg-red-200 rounded-full mr-2 mt-1"></div>
+                    <p className='mb-1'>Dose 2</p>
+                </div>
+                <div className="flex my-2">
+                    <div class="w-5 h-5 bg-yellow-200 rounded-full mr-2 mt-1"></div>
+                    <p className='mb-1'>Dose 3</p>
+                </div>
+                {/* <div class="w-5 h-5 bg-red-200 rounded-full my-2"></div>    
+                <div class="w-5 h-5 bg-yellow-200 rounded-full mr-2 my-2"></div> */}
+            </div>
+            <Doughnut  data={data}  />
         </div>
         < Table />
 
