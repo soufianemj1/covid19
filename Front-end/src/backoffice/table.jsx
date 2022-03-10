@@ -7,7 +7,7 @@ function Table() {
   const [zone, setZone] = useState([]);
 
   const getData = () => {
-    axios
+    axiosgit 
     .get("http://localhost:4001/api/appointment/getAppointement")
     .then((res) => setData(res.data))
     .catch((err) => console.log(err));
