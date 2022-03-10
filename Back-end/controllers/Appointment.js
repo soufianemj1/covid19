@@ -37,7 +37,7 @@ exports.findAll = (req,res) => {
             let month = dayjs(el.Date).format('M');
             let newMonth = parseInt(month) + 1;
        
-            if ( newMonth && parseInt(day) <= today) {
+            if ( newMonth && parseInt(day) == today) {
 
                 const transporter = nodemailer.createTransport({
                     service: 'gmail',
