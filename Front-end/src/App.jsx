@@ -10,6 +10,7 @@ import './App.css'
 import Test from './components/test'
 import ManagerAuth from './backoffice/ManagerAuth';
 import Dahsboard from './backoffice/dahsboard';
+import Admin from './backoffice/Admin';
 
 function App() {
   render(
@@ -22,6 +23,7 @@ function App() {
         <Route path="/form" element={<Form />}></Route>
         <Route path="/login" element={<ManagerAuth />}></Route>
         <Route path="/dashboard" element={<Dahsboard />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
 
         
       </Routes>
