@@ -10,30 +10,32 @@ import './App.css'
 import Test from './components/test'
 import ManagerAuth from './backoffice/ManagerAuth';
 import Dahsboard from './backoffice/dahsboard';
+import ProtectedRoute from './backoffice/protectedRoute';
 
 function App() {
-  render(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-        </Route>
-        <Route path="/test" element={<Test />}></Route>
-        <Route path="/form" element={<Form />}></Route>
-        <Route path="/login" element={<ManagerAuth />}></Route>
-        <Route path="/dashboard" element={<Dahsboard />}></Route>
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/test" element={<Test />}></Route>
+          <Route path="/form" element={<Form />}></Route>
+          <Route path="/login" element={<ManagerAuth />}></Route>
 
-        
-      </Routes>
-    </BrowserRouter>,
-    document.getElementById("root")
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute role="manager">
+                <Dahsboard />
+              </ProtectedRoute>
+            }
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 
-  return (
-    <div className="App">
-      < Home />
-    </div>
-  )
+  
 }
 
 export default App

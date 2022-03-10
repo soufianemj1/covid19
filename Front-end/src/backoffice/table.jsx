@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
+import { useCookies } from 'react-cookie';
+
 function Table() {
   const [data, setData] = useState([]);
-  const [zone, setZone] = useState([]);
+  const [cookies, setCookie] = useCookies([]);
   const getData = () => {
     axios
       .get("http://localhost:4001/api/appointment/getAppointement")
@@ -16,16 +18,7 @@ function Table() {
     getData();
   }, []);
 
-  const filterZone = () => {
-    let geoCookie = document.cookie.split(";");
-    let geo = geoCookie[2].split("=")[1];
-    let geo2 = geo.toUpperCase();
-    setZone(geo2);
-  };
-  useEffect(() => {
-    filterZone();
-  }, []);
-  console.log(zone);
+  const region = cookies.region.toUpperCase();
 
   return (
     <div>
@@ -79,9 +72,9 @@ function Table() {
                   </tr>
                 </thead>
                 <tbody>
-                  {
+                  { data &&
                     data.map((el, index) => 
-                    el.Ville.toUpperCase() === zone && (
+                    el.Ville.toUpperCase() === region && (
 
                      
                       
