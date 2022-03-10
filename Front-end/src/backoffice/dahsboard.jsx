@@ -61,7 +61,7 @@ const Dahsboard = () => {
    
 
   return (
-      <div className='flex  w-screen jusify-center'>
+      <div className='flex jusify-center'>
         <div>
             <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-gray-50 text-gray-800">
             <div class=" flex flex-col h-screen  w-64 bg-gray-900 shadow-lg">
