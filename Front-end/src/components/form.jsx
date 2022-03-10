@@ -1,13 +1,11 @@
 
 import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
 
 import axios from 'axios'
 
 
 
 const Form = () => {
-    const navigate = useNavigate();
 
   
     const [CIN, setCIN] = useState('')
@@ -19,7 +17,7 @@ const Form = () => {
     const Appointment = {
         cin: CIN,
         age: parseInt(Age),
-        ville: Ville,
+        ville: Ville.toUpperCase(),
         dose: parseInt(Dose),
         email: Email
     }

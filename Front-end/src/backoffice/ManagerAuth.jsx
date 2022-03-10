@@ -26,7 +26,7 @@ function ManagerAuth() {
             if (role === 'manager' ) {
                 document.cookie = ("token=" + token + ";");
                 document.cookie = ("role=" + role + ";");
-                document.cookie = ("region=" + region + ";");
+                document.cookie = ("region=" + region.toUpperCase() + ";");
                
                 navigate("/dashboard", { replace: true });
             }
