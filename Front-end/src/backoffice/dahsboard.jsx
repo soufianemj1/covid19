@@ -4,8 +4,9 @@ import {Chart, ArcElement} from 'chart.js'
 Chart.register(ArcElement);
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import IMG from '../images/DD.png';
 import SideBar from './SideBar';
+import React from 'react';
+
 
 
 const Dahsboard = () => {
@@ -63,10 +64,10 @@ const Dahsboard = () => {
    
 
   return (
-      <div className='flex  w-screen jusify-center'>
+      <div className='flex jusify-center'>
         <SideBar/>
     
-        <div className=' w-full p-20 bg-gray-50'>
+        <div className=' w-full p-20 bg-gray-50 pl-80 '>
             <div className='flex'>
                 <div className='w-[50%]'>
                     <div className='w-[25em]'>
