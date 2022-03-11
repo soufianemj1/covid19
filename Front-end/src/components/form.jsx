@@ -1,13 +1,11 @@
 
 import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
 
 import axios from 'axios'
 
 
 
 const Form = () => {
-    const navigate = useNavigate();
 
   
     const [CIN, setCIN] = useState('')

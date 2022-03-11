@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
+import { useCookies } from 'react-cookie';
 
 function Table() {
   const [data, setData] = useState([]);
-  const [zone, setZone] = useState([]);
-
+  const [cookies, setCookie] = useCookies([]);
   const getData = () => {
-    axiosgit 
+    axios 
     .get("http://localhost:4001/api/appointment/getAppointement")
     .then((res) => setData(res.data))
     .catch((err) => console.log(err));
@@ -17,18 +17,7 @@ function Table() {
     getData();
   }, []);
 
-  const filterZone = () => {
-    let geoCookie = document.cookie.split(";");
-    let geo = geoCookie[2].split("=")[1];
-    // let geo2 = geo.toUpperCase();
-    // console.log(geo.toUpperCase());
-    setZone(geo);
-  };
-
-  useEffect(() => {
-    filterZone();
-  }, []);
-
+  const region = cookies.region.toUpperCase();
 
   return (
     <div>
@@ -82,9 +71,9 @@ function Table() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data &&
+                  { data &&
                     data.map((el, index) => 
-                    el.Ville == zone && (
+                    el.Ville.toUpperCase() === region && (
 
                      
                       
@@ -97,7 +86,7 @@ function Table() {
                           {el.Age}
                         </td>
                         <td className="text-center py-4 px-6 text-sm text-black-500 whitespace-nowrap dark:text-black-400">
-                          {el.Ville}
+                          {el.Ville.toUpperCase()}
                         </td>
                         <td className="text-center py-4 px-6 text-sm text-black-500 whitespace-nowrap dark:text-black-400">
                           {el.Dose}
