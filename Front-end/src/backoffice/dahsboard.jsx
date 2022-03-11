@@ -117,9 +117,7 @@ const Dahsboard = () => {
                     </div>
 
                 </div>
-                <div className='w-[50%]'>
-                    <img src={IMG} />
-                </div>
+               
             </div>
             < Table />
 
