@@ -10,6 +10,7 @@ import Test from './components/test'
 import ManagerAuth from './backoffice/ManagerAuth';
 import Dahsboard from './backoffice/dahsboard';
 import ProtectedRoute from './backoffice/protectedRoute';
+import Admin from './backoffice/Admin';
 
 function App() {
   return (
@@ -29,6 +30,16 @@ function App() {
               </ProtectedRoute>
             }
           ></Route>
+
+          <Route
+            path="/admin"
+            element={
+              // <ProtectedRoute role="admin">
+                <Admin />
+              // </ProtectedRoute>
+            }
+          ></Route>
+
         </Routes>
       </BrowserRouter>
     </div>

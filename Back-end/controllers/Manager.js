@@ -1,5 +1,7 @@
 const mngr = require('../models/Manager');
 var jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+
 
 exports.login = async(req,res) => {
 
@@ -60,7 +62,33 @@ exports.create = async (req,res) => {
 
     newManager
      .save(newManager)
-     .then(data => { res.status(200).json(data) })
+     .then(data => { 
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'testcoding975@gmail.com',
+              pass: 'testCoding1998'
+            }
+        });
+            
+        const mailOptions = {
+            from: 'testcoding975@gmail.com',
+            to: data.Email,
+            subject: 'Account Password',
+            text: "Your password is "+data.Password
+        };
+        
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+
+        res.status(200).json(data) 
+      })
      .catch(err => console.warn(err));
 
 }
