@@ -7,7 +7,7 @@ function Table() {
   const [data, setData] = useState([]);
   const [cookies, setCookie] = useCookies([]);
   const getData = () => {
-    axios
+    axios 
     .get("http://localhost:4001/api/appointment/getAppointement")
     .then((res) => setData(res.data))
     .catch((err) => console.log(err));

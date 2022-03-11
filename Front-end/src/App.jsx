@@ -1,6 +1,5 @@
 import Home from './components/home'
 import Form from './components/form'
-import { render } from "react-dom"
 import {
   BrowserRouter,
   Routes,
