@@ -11,6 +11,7 @@ import ManagerAuth from './backoffice/ManagerAuth';
 import Dahsboard from './backoffice/dahsboard';
 import ProtectedRoute from './backoffice/protectedRoute';
 import Admin from './backoffice/Admin';
+import AdminAuth from './backoffice/AdminAuth';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/test" element={<Test />}></Route>
           <Route path="/form" element={<Form />}></Route>
           <Route path="/login" element={<ManagerAuth />}></Route>
+          <Route path="/adminlogin" element={<AdminAuth />}></Route>
 
           <Route
             path="/dashboard"
@@ -34,9 +36,9 @@ function App() {
           <Route
             path="/admin"
             element={
-              // <ProtectedRoute role="admin">
+              <ProtectedRoute role="admin">
                 <Admin />
-              // </ProtectedRoute>
+              </ProtectedRoute>
             }
           ></Route>
 

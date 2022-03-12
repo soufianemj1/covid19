@@ -25,7 +25,7 @@ exports.login = async(req,res) => {
             }
         );
         
-        res.status(200).json({token, role:'manager', message: "You logged in successfully"});
+        res.status(200).json({token, role:'admin', message: "You logged in successfully"});
 
     }
 }

@@ -62,7 +62,7 @@ function Admin() {
       <SideBar/>
       <div className='w-full p-20 bg-gray-50'>
 
-      <div class="bg-white shadow rounded-lg p-6 mx-5">
+        <div class="bg-white shadow rounded-lg p-6 mx-5">
 
         {/* ------------------------------- Form ------------------------------- */}
 
