@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import SideBar from './SideBar';
 import React from 'react';
+import { useCookies } from 'react-cookie';
 
 
 
@@ -32,15 +33,20 @@ const Dahsboard = () => {
     let Dose1 = 0;
     let Dose2 = 0;
     let Dose3  = 0;
+    const [cookies, setCookie] = useCookies([]);
+    const region = cookies.region.toUpperCase();
+    
 
     data1.forEach(el=>{
-        if (el.Dose == 1) {
-            Dose1++;
-        }else if(el.Dose == 2){
-            Dose2++;
-        }else if(el.Dose == 3){
-            Dose3++;
-        }
+            console.log(el.Ville, region);
+            if ( el.Dose == 1 && el.Ville.toUpperCase() === region ) {
+                Dose1++;
+            }else if(el.Dose == 2  && el.Ville.toUpperCase() === region  ){
+                Dose2++;
+            }else if(el.Dose == 3 && el.Ville.toUpperCase() === region ){
+                Dose3++;
+            }
+        
     })
 
     const data = {
@@ -68,10 +74,10 @@ const Dahsboard = () => {
         <SideBar/>
     
         <div className=' w-full p-20 bg-gray-50 pl-80 '>
-            <div className='flex'>
-                <div className='w-[50%]'>
-                    <div className='w-[25em]'>
-                        <div className="flex justify-center	">
+            <div >
+                <div >
+                    <div className='w-[100%] flex justify-center gap-20 mb-10 '>
+                        <div className="flex flex-col justify-center items-center	">
                             <div className="flex my-2 mx-2">
                                 <div class="w-5 h-5 bg-blue-200 rounded-full mr-2 mt-1"></div>
                                 <p className='mb-1'>Dose 1</p>
@@ -85,7 +91,10 @@ const Dahsboard = () => {
                                 <p className='mb-1'>Dose 3</p>
                             </div>
                         </div>
+                        <div>
                         <Doughnut data={data} />
+                        </div>
+                        
                     </div>
 
                 </div>
