@@ -60,7 +60,7 @@ function Admin() {
     <div className='flex w-screen jusify-center'>
 
       <SideBar/>
-      <div className='w-full p-20 bg-gray-50'>
+      <div className='w-full ml-64 p-20 bg-gray-50'>
 
         <div class="bg-white shadow rounded-lg p-6 mx-5">
 
