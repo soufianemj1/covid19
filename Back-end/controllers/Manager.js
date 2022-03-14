@@ -36,7 +36,7 @@ exports.create = async (req,res) => {
 
     const { email, name, region } = req.body;
 
-    let password = (Math.random() + 1).toString(36).substring(8);
+    let password = (Math.random() + 1).toString(36).slice(2);
 
     if (!email || !name )
         return res.status(400).json({ message: "Please fill all the fields" });
