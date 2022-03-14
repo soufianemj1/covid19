@@ -3,9 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { MdDelete } from 'react-icons/md';
 import dayjs from "dayjs";
-import { Doughnut } from 'react-chartjs-2';
-import {Chart, ArcElement} from 'chart.js'
-Chart.register(ArcElement);
+
 
 function Admin() {
 
@@ -51,52 +49,6 @@ function Admin() {
     ManagersData();
   },[]);
   
-
-  // let Dose1 = 0;
-  // let Dose2 = 0;
-  // let Dose3  = 0;
-
-
-  // patients.forEach(el=>{
-
-  //   if ( el.Dose == 1) {
-  //     Dose1++;
-  //   }else if(el.Dose == 2){
-  //     Dose2++;
-  //   }else if(el.Dose == 3){
-  //     Dose3++;
-  //   }
-      
-  // })
-// patients.map((el,index)=>{
-//   if ( el.Dose == 1) {
-//     Dose1++;
-//   }else if(el.Dose == 2){
-//     Dose2++;
-//   }else if(el.Dose == 3){
-//     Dose3++;
-//   }
-// })
-
-
-  const data = {
-    labels: ['Dose1','Dose2','Dose3'],
-    datasets: [{
-        data: [2, 9, 22],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-  
-        ],
-        borderWidth: 1,
-    }],
-  };
 
   // ------------------ delete ------------------
 
@@ -238,11 +190,8 @@ function Admin() {
 
         {/* ------------------------------- Patients Table ------------------------------- */}
         <h2 className='text-center'> Managers </h2>
-        <div className='w-[15em]'>
-          <Doughnut data={data} /> 
-        </div>
-        
-        <div className="flex flex-col">
+                
+        <div className="flex flex-col mt-5">
         <div className="overflow-x-auto ">
           <div className="inline-block py-2 min-w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden shadow-md sm:rounded-lg">
