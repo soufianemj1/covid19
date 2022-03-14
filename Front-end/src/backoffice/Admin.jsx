@@ -24,7 +24,7 @@ function Admin() {
       email: email,
       region: region
     })
-    .then(res=>( getData() ))
+    .then(res=>( ManagersData() ))
     .catch(err=>console.log(err))
     
 }
@@ -47,14 +47,14 @@ function Admin() {
   };
 
   useEffect(()=>{
-    ManagersData();
     PatientsData();
+    ManagersData();
   },[]);
+  
 
   // let Dose1 = 0;
   // let Dose2 = 0;
   // let Dose3  = 0;
-    // console.log(patients);
 
 
   // patients.forEach(el=>{
@@ -78,11 +78,11 @@ function Admin() {
 //   }
 // })
 
-// console.log(Dose1);
+
   const data = {
     labels: ['Dose1','Dose2','Dose3'],
     datasets: [{
-        data: [2, 3, 100],
+        data: [2, 9, 22],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -105,7 +105,7 @@ function Admin() {
     if (window.confirm("Are you sure you want to delete this Manager ?")){
     
       axios.delete(`http://localhost:4001/api/manager/deleteManager/${id}`)
-      .then(res => getData())
+      .then(res => ManagersData())
       .catch(err=> console.log(err))
 
     }
@@ -238,9 +238,9 @@ function Admin() {
 
         {/* ------------------------------- Patients Table ------------------------------- */}
         <h2 className='text-center'> Managers </h2>
-        {/* <div className='w-[15em]'> */}
+        <div className='w-[15em]'>
           <Doughnut data={data} /> 
-        {/* </div> */}
+        </div>
         
         <div className="flex flex-col">
         <div className="overflow-x-auto ">
